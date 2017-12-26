@@ -1,0 +1,28 @@
+{
+  "name": "npme-slug-validate",
+  "version": "1.0.0",
+  "description": "Slug validator for npme",
+  "main": "lib/validate.js",
+  "scripts": {
+    "test": "nyc mocha test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/npme-slug-validate.git"
+  },
+  "keywords": [
+    "slug",
+    "npme"
+  ],
+  "author": "Joel Edwards <joel@npmjs.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/npm/npme-slug-validate/issues"
+  },
+  "homepage": "https://github.com/npm/npme-slug-validate#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "nyc": "^11.4.1"
+  }
+}
