@@ -32,6 +32,7 @@ describe('npme-slug-validate', () => {
     assertTooShort(validate(''))
     assertTooShort(validate('n'))
     assertTooShort(validate('np'))
+    assertTooShort(validate('--'))
   })
 
   it('should require a slug shorter than 63 characters', () => {
@@ -39,17 +40,21 @@ describe('npme-slug-validate', () => {
 
     assertTooLong(validate('npme'.repeat(16)))
     assertTooLong(validate('-'.repeat(64)))
+    assertTooLong(validate('a' + '-'.repeat(62) + 'z'))
   })
 
-  it('should only contain lowercase characters', () => {
+  it('should require lowercase characters', () => {
     assertValid(validate('charlie'))
 
     assertBadChars(validate('Charlie'))
+    assertBadChars(validate('charliE'))
+    assertBadChars(validate('charLie'))
   })
 
   it('should required a slug to begin with an alhpa character', () => {
     assertValid(validate('gzip'))
 
+    assertBadChars(validate('@npm'))
     assertBadChars(validate('7zip'))
     assertBadChars(validate('123'))
     assertBadChars(validate('-abc'))
@@ -62,12 +67,13 @@ describe('npme-slug-validate', () => {
     assertValid(validate('day1'))
 
     assertBadChars(validate('day-'))
+    assertBadChars(validate('mam@'))
   })
 
   it('should required a slug contain only alphanumeric or hyphen', () => {
     assertValid(validate('a-z'))
-    assertValid(validate('a--z'))
     assertValid(validate('a-d-z'))
+    assertValid(validate('a' + '-'.repeat(61) + 'z'))
 
     assertBadChars(validate('d@y'))
     assertBadChars(validate('a:z'))
