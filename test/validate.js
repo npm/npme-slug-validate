@@ -38,6 +38,7 @@ describe('npme-slug-validate', () => {
     assertValid(validate('npm'.repeat(21)))
 
     assertTooLong(validate('npme'.repeat(16)))
+    assertTooLong(validate('-'.repeat(64)))
   })
 
   it('should only contain lowercase characters', () => {
@@ -53,6 +54,7 @@ describe('npme-slug-validate', () => {
     assertBadChars(validate('123'))
     assertBadChars(validate('-abc'))
     assertBadChars(validate('-123'))
+    assertBadChars(validate('-'.repeat(63)))
   })
 
   it('should required a slug to end with a alphanumeric character', () => {
