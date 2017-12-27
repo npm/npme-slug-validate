@@ -5,7 +5,10 @@ should()
 
 const {reasons, validate} = require('../lib/validate')
 
-const assertInvalid = text => value => value.should.be.instanceOf(Error, text)
+const assertInvalid = text => outcome => {
+  outcome.should.be.instanceof(Error)
+  outcome.message.should.equal(text)
+} 
 const assertBadType = value => assertInvalid(reasons.string)(value)
 const assertTooShort = value => assertInvalid(reasons.length)(value)
 const assertTooLong = value => assertInvalid(reasons.length)(value)
