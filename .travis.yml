@@ -1,0 +1,14 @@
+sudo: required
+language: node_js
+os:
+  - linux
+node_js:
+  - '6'
+  - '8'
+before_install:
+  - npm install -g npm@latest
+script:
+  - npm test && nyc report --reporter=text-lcov | coveralls
+notifications:
+  slack:
+
