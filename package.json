@@ -1,6 +1,6 @@
 {
   "name": "@npm/npme-slug-validate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Slug validator for npme",
   "main": "lib/validate.js",
   "scripts": {
