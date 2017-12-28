@@ -1,3 +1,5 @@
+/* global describe, it */
+
 require('mocha')
 
 const {expect, should} = require('chai')
@@ -8,7 +10,7 @@ const {reasons, validate} = require('../lib/validate')
 const assertInvalid = text => outcome => {
   outcome.should.be.instanceof(Error)
   outcome.message.should.equal(text)
-} 
+}
 const assertBadType = value => assertInvalid(reasons.string)(value)
 const assertTooShort = value => assertInvalid(reasons.length)(value)
 const assertTooLong = value => assertInvalid(reasons.length)(value)
