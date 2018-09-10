@@ -1,10 +1,10 @@
 # npme-slug-validate
 
-Validates if a text string is a valid npmE slug name.
+Validates if a text string is a valid npmE slug.
 
 ## Format
 
-Requirements for a valid npmE slug name attempt to follow the recommendation for a domain name label as outlined in Appendix 1 of RFC 883. The requirements are as follows:
+Requirements for a valid npmE slug mirror the recommendation for a domain name label as outlined in Appendix 1 of RFC 883. The requirements are as follows:
 
 - minimum of 3 characters in length
 - maximum of 63 characters in length
@@ -28,7 +28,7 @@ Requirements for a valid npmE slug name attempt to follow the recommendation for
 
 ## Usage
 
-```
+```javascript
 const {validate: validateSlug} = require('npme-slug-validate')
 
 function validateEnterpriseSlug (eSlug) {
