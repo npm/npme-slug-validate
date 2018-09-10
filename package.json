@@ -14,8 +14,9 @@
     "url": "git+https://github.com/npm/npme-slug-validate.git"
   },
   "keywords": [
+    "npme",
     "slug",
-    "npme"
+    "validate"
   ],
   "author": "Joel Edwards <joel@npmjs.com>",
   "license": "ISC",
